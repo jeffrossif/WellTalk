@@ -11,3 +11,44 @@
  *= require_self
  *= require_tree .
  */
+ a{
+ 	text-decoration: none;
+ 	border:0;
+ }
+#navbar-body #logo{
+	float: left;
+	margin: 4px 10px 0 0;
+}
+#navbar-body .brand{
+	font-size: 25px;
+}
+#navbar-body #menu-right{
+	float: right;
+}
+#navbar-body #menu-right #name,.dropdown{
+	margin:10px;
+	float: left;
+}
+#navbar-body #menu-right #name{
+	
+	color: black;
+}
+#dropdown{
+	float: right;
+}
+#conf-icon i{
+	color:black;
+	border:0;
+}
+#conf-icon{
+	text-decoration: none;
+}
+#menu-conf{
+	margin: 2px -145px 0;
+}
+#modal-log-user{
+	width: 300px;
+}
+#body-devise{
+	margin: 0 auto;
+}
