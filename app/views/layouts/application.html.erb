@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WellTalk</title>
+  <title>We'll Talk</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar">
-  <div class="navbar-inner">
-  	<div id="navbar-body">
-  		<div id="logo">
-	  		<%= image_tag "logo.png"%>
-  		</div>
-	  	<a class="brand" href="#">We'll Talk</a>
-	  	<div id="menu-right">
-		  	<% if current_user %>
-		  			<%= link_to current_user.username , root_path,id:"name" %>
-		  			<div class="dropdown">
-		  				<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="conf-icon">
-	        				<i class="icon-cog"></i>
-	      				</a>
-				  		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" id="menu-conf">
-				  			<li>
-				  				<%= link_to 'Editar conta', edit_user_registration_path(current_user) %>
-				  			</li>	
+	<div id="content">
+	  	<div id="navbar-body">
+	  		<div id="logo"> <%= image_tag "logo.png"%></div>
+	  		<div id="search-field" class="input-append"> 
+	  			<%= text_field_tag :search_people, "", placeholder: "Pesquisar amigos",id:"prependedInput"%>
+	  			<span class="add-on">
+	  				<span class="icon-search"></span>
+	  			</span>
+	  		</div>
+		  	<div id="menu-right">
+			  	<% if current_user %>
+			  		<%= link_to current_user.username , root_path,id:"name" %>
+			  		<div class="dropdown">
+			  			<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="conf-icon">
+		        			<i class="icon-cog"></i>
+		      			</a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" id="menu-conf">
+					  		<li>
+					  			<%= link_to 'Editar conta', edit_user_registration_path(current_user) %>
+					  		</li>	
 							<li class="divider">
 							</li>
 							<li>
-				  				<%= link_to "Sair", destroy_user_session_path, method: :delete, tabindex: -1%>
+					  			<%= link_to "Sair", destroy_user_session_path, method: :delete, tabindex: -1%>
 							</li>
 						</ul>
-		  			</div>	
-		  	<% else %>
-		  		<div class="btn-group">
-		  			<%= link_to "Entrar", "#modal-log-user",class:"btn btn-warning",role:"button", :'data-toggle' => 'modal' %>
-		  			<%= link_to "Cadastrar", new_user_registration_path, class:"btn" %>
-		  		</div>
-		  	<%end%>
-	  	</div>
-  	</div>
-  </div>
+			  		</div>	
+			  	<% else %>
+			  		<div class="btn-group">
+			  			<%= link_to "Entrar", "#modal-log-user",class:"btn",role:"button", :'data-toggle' => 'modal' %>
+			  			<%= link_to "Juntar-se", new_user_registration_path, class:"btn" %>
+			  		</div>
+				<%end%>
+			</div>
+		</div>
+		<%= yield %>
+		<div id="modal-log-user" class="modal hide fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <%= render partial:'devise/partial/new'%>
+		</div>
+		</body>
+	</div>
+
+<div id="foother">
 </div>
-<%= yield %>
-<div id="modal-log-user" class="modal hide fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-  <%= render partial:'devise/partial/new'%>
-</div>
-</body>
 </html>

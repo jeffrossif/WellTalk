@@ -1,9 +1,8 @@
 WellTalk::Application.routes.draw do
   get "profile/index"
   match "profile/:username"=> "profile#view"
-
   root to: "profile#index"
-  devise_for :users
+  devise_for :users, controllers:{registrations:"registrations"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

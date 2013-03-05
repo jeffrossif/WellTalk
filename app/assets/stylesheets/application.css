@@ -11,18 +11,32 @@
  *= require_self
  *= require_tree .
  */
- a{
+
+
+a{
  	text-decoration: none;
  	border:0;
  }
+input[type="checkbox"]{
+	float:left;
+}
+#search-field{
+	float: left;
+	margin: 5px 0 5px 200px;
+}
+#navbar-body{
+	background-color: white;
+	border-bottom: 2px solid orange;
+	padding: 5px;
+	margin: 0 auto;
+	height: 40px
+}
 #navbar-body #logo{
 	float: left;
-	margin: 4px 10px 0 0;
-}
-#navbar-body .brand{
-	font-size: 25px;
+	margin: -1px 10px 0 0;
 }
 #navbar-body #menu-right{
+	margin: 5px;
 	float: right;
 }
 #navbar-body #menu-right #name,.dropdown{
@@ -31,13 +45,13 @@
 }
 #navbar-body #menu-right #name{
 	
-	color: black;
+	color:orange ;
 }
 #dropdown{
 	float: right;
 }
 #conf-icon i{
-	color:black;
+	color:orange;
 	border:0;
 }
 #conf-icon{
@@ -50,5 +64,63 @@
 	width: 300px;
 }
 #body-devise{
-	margin: 0 auto;
+	margin: 100px auto;
+	width: 270px;
+	padding: 10px 20px;
+	background:white;
+	border: 1px solid #f3f3f3;
+	border-radius:5px;
+
+	-webkit-box-shadow:  2px 2px 10px 3px rgba(128, 128, 128, 0.35);
+    box-shadow:  2px 2px 10px 3px rgba(128, 128, 128, 0.35);
+}
+#body-devise #submit{
+	height: 32px;
+}
+#body-devise #submit input{
+	bottom: 0;
+	float: right;
+}
+#body-devise h3{
+	color:gray;
+}
+
+#body-devise-form{
+	margin: 10px auto;
+	padding: 10px 20px;
+	height: 560px;
+	width: 600px;
+	background:white;
+	border: 1px solid #f3f3f3;
+	border-radius:5px;
+
+	-webkit-box-shadow:  2px 2px 10px 3px rgba(128, 128, 128, 0.35);
+    box-shadow:  2px 2px 10px 3px rgba(128, 128, 128, 0.35);
+}
+#body-devise-form #submit{
+	height: 32px;
+}
+#body-devise-form #submit input{
+	margin-top: 20px;
+	float: right;
+}
+#body-devise-form h3{
+	color:gray;
+}
+
+#form-left{
+	float:left;
+	width: 280px;
+}
+#form-right{
+	margin-left: 20px;
+	width: 280px;
+	float: left;
+}
+
+#foother{
+	height: 50px;
+	width: 50px;
+	color: orange;
+
 }

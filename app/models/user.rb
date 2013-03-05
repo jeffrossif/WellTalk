@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
   attr_accessor :login
   # attr_accessible :title, :body
 
+  has_one :person, dependent: :destroy
+
+  validates :username,presence: true, lenght: {in: 4..25}
+  validates :person, precence: true  
+
+
   #login with email or username method
   def self.find_first_by_auth_conditions(warden_conditions)
       conditions = warden_conditions.dup
